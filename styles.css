@@ -1,0 +1,263 @@
+html,
+body {
+  height: 100%;
+  line-height: 1;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 14px;
+}
+
+/*-----------------------------*/
+
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+[class*="__container"] {
+  max-width: 1920px;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+
+*/ .header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+.header__container {
+  display: flex;
+  min-height: 100px;
+  align-items: center;
+}
+.header__logo {
+}
+.header__logo img {
+  height: 100px;
+}
+
+.logo__text {
+  color: #d50000;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.header__menu {
+  flex: 1 1 auto;
+}
+.header__button {
+  flex: 0 0 240px;
+  display: flex;
+  justify-content: center;
+}
+.menu {
+  display: flex;
+  justify-content: flex-end;
+}
+.menu__list {
+  display: flex;
+}
+.menu__link:hover {
+  color: #d50000;
+  transition: 0.3s ease 0s;
+  text-decoration: underline;
+}
+.menu__item {
+  margin: 0px 40px 0px 0px;
+  list-style: none;
+}
+.menu__link {
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.phone__number a:hover {
+  color: #d50000;
+  transition: 0.3s ease 0s;
+  text-decoration: underline;
+}
+.phone__number {
+  padding: 20px;
+  min-width: 180px;
+}
+.phone__number a {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #000;
+}
+.button {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+  color: #fff;
+  padding: 15px 40px;
+  background-color: #d50000;
+  border-radius: 5px;
+  border: 2px solid #d50000;
+  text-decoration: none;
+  transition: background-color 0.3s ease 0s;
+}
+
+.button:hover {
+  background-color: #fff;
+  color: #d50000;
+  text-decoration: underline;
+}
+
+/*BURGER MENU*/
+.menu__icon {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  /*Делаем 3 полоски*/
+  .menu__icon {
+    z-index: 5;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+  }
+  .menu__icon span,
+  .menu__icon:before,
+  .menu__icon:after {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: #000;
+  }
+  .menu__icon:before,
+  .menu__icon:after {
+    content: "";
+  }
+  .menu__icon:before {
+    top: 0;
+  }
+
+  .menu__icon:after {
+    bottom: 0;
+  }
+  .menu__icon span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+
+  .menu__icon._active span {
+    transform: scale(0) translate(0px, -50%);
+  }
+  .menu__icon._active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+  .menu__icon._active::after {
+    top: 50%;
+    transform: rotate(45deg) translate(0px, -50%);
+  }
+
+  /*Конец 3 полоски*/
+  /*Выездное меню*/
+  .menu__body {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0px 0px 0px;
+    transition: left 0.3s ease 0s;
+    overflow: auto;
+  }
+
+  .menu__body._active {
+    left: 0;
+  }
+  .menu__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .menu__item {
+    margin: 20px 0px 20px 0px;
+  }
+  .menu__link {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 1180px) {
+  /*Удаление номера в хедере*/
+  .phone__number {
+    display: none;
+  }
+}
+
+/*PC*/
+
+@media (max-width: 1920px) {
+  [class*="__container"] {
+    max-width: 1890px;
+  }
+}
+
+/*TABLET*/
+
+@media (max-width: 991.98px) {
+  [class*="__container"] {
+    max-width: 960px;
+  }
+}
+/*MOBILE*/
+
+@media (max-width: 767.98px) {
+  [class*="__container"] {
+    max-width: none;
+  }
+
+  /*уменьшение кнопки в хедере*/
+  .button {
+    padding: 10px 20px;
+  }
+  .header__logo > img {
+    display: none;
+  }
+  /*Появление ГК лого */
+  .logo__text {
+    display: block;
+    position: relative;
+    z-index: 5;
+  }
+  .header__button {
+    position: relative;
+    z-index: 5;
+    flex: 0 0 170px;
+    padding-right: 20px;
+  }
+}
+
+/*Удаление ГК лого*/
+@media (min-width: 768px) {
+  .logo__text {
+    display: none;
+  }
+}
