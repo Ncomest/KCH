@@ -15,7 +15,6 @@
             <img src="img/logo.png" alt="Графские кухни" />
             <div class="logo__text">ГК</div>
           </a>
-          
           <div class="header__menu menu">
             <nav class="menu__body">
               <ul class="menu__list">
@@ -31,7 +30,7 @@
               </ul>
             </nav>
           </div>
-          
+
           <div class="phone__number"><a href="">+7(800) 800-00-00</a></div>
           <div class="header__button">
             <a href="" class="button">Заказать проект</a>
@@ -39,7 +38,31 @@
           <div class="menu__icon"><span></span></div>
         </div>
       </header>
-      <main class="main">контент</main>
+      <main class="main">
+        <div class="look-kitch">
+          <div class="look-kitch__container">
+            <div class="look-kitch__content">
+              <div class="text-container">
+                <p class="look-kitch-text">Хотите увидеть свою будущую кухню?</p>
+              </div>
+            </div>
+            <div class="look-kitch__form">
+              <div class="form-block">
+                <form action="send-form.php" method="post">
+                  <div class="form-send-form">
+                    <h3>Заполните заявку</h3>
+                    <p>на бесплатный дизайн-проект вашей будущей кухни!</p>
+                    <input type="text" name="userName" placeholder="Имя" required/>
+                    <input type="text" name="userPhone" placeholder="Телефон" required/>
+                    <input type="email" name="email" placeholder="E-mail" />
+                    <button type="submit" name="submit">Отправить заявку</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
       <footer class="footer">футер</footer>
       <script src="script.js"></script>
     </div>
