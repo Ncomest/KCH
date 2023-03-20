@@ -1,30 +1,5 @@
 "use strict";
 
-var userDeviceArray = [
-  {device: 'Android', platform: /Android/},
-  {device: 'iPhone', platform: /iPhone/},
-  {device: 'iPad', platform: /iPad/},
-  {device: 'Symbian', platform: /Symbian/},
-  {device: 'Windows Phone', platform: /Windows Phone/},
-  {device: 'Tablet OS', platform: /Tablet OS/},
-  {device: 'Linux', platform: /Linux/},
-  {device: 'Windows', platform: /Windows NT/},
-  {device: 'Macintosh', platform: /Macintosh/}
-];
-
-var platform = navigator.userAgent;
-
-function getPlatform() {
-  for (var i in userDeviceArray) {
-      if (userDeviceArray[i].platform.test(platform)) {
-          return userDeviceArray[i].device;
-      }
-  }
-  return 'Неизвестная платформа!' + platform;
-}
-
-console.log('Ваша платформа: ' + getPlatform());
-
 const iconMenu = document.querySelector(".menu__icon");
 const menuBody = document.querySelector(".menu__body");
 if (iconMenu) {
@@ -32,4 +7,34 @@ if (iconMenu) {
     iconMenu.classList.toggle("_active");
     menuBody.classList.toggle("_active");
   });
+}
+
+// Получаем нужные элементы из DOM
+const modal = document.getElementById("myModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.getElementsByClassName("close")[0];
+const modalBtns = document.getElementsByClassName("modal-button");
+
+
+// Добавляем обработчик клика на каждую кнопку "Посмотреть"
+for (let i = 0; i < modalBtns.length; i++) {
+  modalBtns[i].onclick = function() {
+    modal.style.display = "block"; // Открываем модальное окно
+    modalImg.src = this.previousElementSibling.src; // Устанавливаем изображение в модальном окне
+    document.body.style.overflow = "hidden";
+  }
+}
+
+// Добавляем обработчик клика на крестик, чтобы закрыть модальное окно
+closeBtn.onclick = function() {
+  modal.style.display = "none"; // Закрываем модальное окно
+  document.body.style.overflow = "auto";
+}
+
+// Добавляем обработчик клика на весь документ, чтобы закрыть модальное окно при клике вне его области
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none"; // Закрываем модальное окно
+    document.body.style.overflow = "auto";
+  }
 }

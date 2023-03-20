@@ -4,6 +4,16 @@ body {
   line-height: 1;
 }
 
+/*плавный переход*/
+html {
+  scroll-behavior: smooth;
+}
+
+/*переход с padding*/
+[id] {
+  scroll-margin-top: 70px;
+}
+
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 14px;
@@ -37,13 +47,13 @@ body {
   z-index: 20;
   border-bottom: 1px solid #d50000;
 }
+
 .header__container {
   display: flex;
   min-height: 100px;
   align-items: center;
 }
-.header__logo {
-}
+
 .header__logo img {
   height: 100px;
 }
@@ -57,27 +67,33 @@ body {
 .header__menu {
   flex: 1 1 auto;
 }
+
 .header__button {
   flex: 0 0 240px;
   display: flex;
   justify-content: center;
 }
+
 .menu {
   display: flex;
   justify-content: flex-end;
 }
+
 .menu__list {
   display: flex;
 }
+
 .menu__link:hover {
   color: #d50000;
   transition: 0.3s ease 0s;
   text-decoration: underline;
 }
+
 .menu__item {
   margin: 0px 40px 0px 0px;
   list-style: none;
 }
+
 .menu__link {
   color: #000;
   font-size: 20px;
@@ -91,10 +107,12 @@ body {
   transition: 0.3s ease 0s;
   text-decoration: underline;
 }
+
 .phone__number {
   padding: 20px;
   min-width: 180px;
 }
+
 .phone__number a {
   font-size: 20px;
   font-weight: 500;
@@ -102,6 +120,7 @@ body {
   text-decoration: none;
   color: #000;
 }
+
 .button {
   display: inline-block;
   font-weight: 500;
@@ -109,6 +128,7 @@ body {
   line-height: 12px;
   letter-spacing: 0.5px;
   color: #fff;
+  box-shadow: 0 9px #999;
   padding: 15px 40px;
   background-color: #d50000;
   border-radius: 5px;
@@ -120,16 +140,26 @@ body {
 .button:hover {
   background-color: #fff;
   color: #d50000;
-  text-decoration: underline;
 }
 
+.button:active {
+  background-color: #fff;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 
+/*================================*/
 
+/* Блок формы заявки */
+
+/*общий блок*/
 
 .look-kitch {
-  height: 1500px;
-  padding: 95px 0px 50px 0px;
+  height: 100vh;
+  padding: 95px 0px 0px 0px;
 }
+
+/*ограничевающий контейрен с картинкой*/
 .look-kitch__container {
   display: flex;
   background-image: url("img/landing.jpg");
@@ -137,27 +167,38 @@ body {
   background-position: center;
   background-size: cover;
   height: 100vh;
+  position: relative;
+ 
 }
+
+/*контейнер с затемнением*/
+.bgrd-dark__container {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+/*Левая секция*/
 .look-kitch__content {
   flex: 0 1 50%;
   display: flex;
   align-items: center;
-  
+  z-index: 2;
 }
 
-.form-send-form {
-  background-color: #fff;
-  border: 2px solid #d50000;
-  display: flex;
-  padding: 15px;
-}
-
+/*левый секция контейнер*/
 .text-container {
   display: flex;
   justify-content: end;
   padding: 0px 30px 0px 0px;
-
 }
+
+/*левая секция текст*/
 .look-kitch-text {
   width: 50%;
   color: #fff;
@@ -166,23 +207,31 @@ body {
   font-weight: 600;
 }
 
+/*Правая секция блока*/
 .look-kitch__form {
   flex: 0 1 50%;
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 
+/*расположение блока*/
 .form-block {
   display: flex;
   justify-content: start;
   padding: 0px 0px 0px 30px;
 }
 
+/*Форма отправки*/
 .form-send-form {
+  background-color: #fff;
+  border: 2px solid #d50000;
   display: flex;
   flex-direction: column;
+  padding: 15px;
 }
 
+/*Заглавие формы*/
 .form-send-form h3 {
   color: rgb(213, 0, 0);
   font-size: 30px;
@@ -227,19 +276,218 @@ body {
 
 /*анимация кнопки*/
 .form-send-form button:hover {
-  background-color: #c31e19;
+  color: #d50000;
+  background-color: #fff;
+  border: 2px solid #d50000;
+  transition: background-color 0.3s ease 0s;
 }
 
 .form-send-form button:active {
-  background-color: #8c0404;
+  background-color: #fff;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
+/*промежуточный повторяющийся блок*/
 
+.title-text {
+  margin: auto;
+  text-align: center;
+  color: #d50000;
+  font-weight: 100;
+  font-size: 52px;
+  line-height: 2;
+  padding: 40px 0px 20px 0px;
+}
+.simple-text {
+  margin: auto;
+  text-align: center;
+  color: #707070;
+  font-size: 26px;
+  line-height: 1.45;
+  font-weight: 100;
+  width: 60%;
+  padding: 40px 0px 20px 0px;
+}
 
+.text-title {
+  color: #000;
+  font-weight: 300;
+  font-size: 52px;
+  line-height: 1.23;
+  text-align: center;
+}
 
+/*Почему мы!*/
+.why-we-block,
+.step-block {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 25% 25% 25%;
+}
 
+.block {
+  background-color: #fff;
+  margin: 20px;
+  padding: 30px;
+  box-shadow: rgb(0 0 0 / 30%) 0px 0px 10px 0px;
+}
+
+.block div {
+  margin: 0px;
+  padding: 10px 0px 10px 0px;
+}
+
+.block h4 {
+  font-size: 18px;
+  color: #d50000;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.block p {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+/*контейнер с блоками фото*/
+.classic-kitchen__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+}
+
+/*блоки фото*/
+.classic-block {
+  position: relative;
+}
+
+.classic-block img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/*кнопка для картинки*/
+.classic-block button {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: button-animation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #8c0404;
+  border: 1px solid #610303;
+  border-radius: 5px;
+  font-size: 14px;
+  letter-spacing: 0.1rem;
+}
+
+/*наведение на кнопку*/
+.classic-block:hover button {
+  display: block;
+}
+
+/*анимация кнопки*/
+@keyframes button-animation {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none; /* скрыть модальное окно по умолчанию */
+  position: fixed; /* фиксированная позиция */
+  z-index: 25; /* на верхнем слое */
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+   /*overflow: auto; добавить прокрутку, если контент слишком длинный */
+  background-color: rgba(0, 0, 0, 0.7); /* затемнить фон */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+/* Стили для крестика */
+.close {
+  color: #fff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.step-number {
+  color: #d50000;
+  font-size: 56px;
+  margin: 0;
+  font-weight: 800;
+}
+
+/*футер*/
+.footer {
+  padding: 50px 0px;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.contacts {
+  flex: 1 1 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.contacts h4 {
+  padding: 0;
+}
+
+.map {
+  flex: 1 1 50%;
+}
+
+.contacts h5 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contacts p {
+  color: #707070;
+}
+
+/*========================*/
+/*Media section*/
 /*BURGER MENU*/
 .menu__icon {
   display: none;
@@ -301,7 +549,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    padding: 100px 0px 0px 0px;
+    padding: 85px 0px 0px 0px;
     transition: left 0.3s ease 0s;
     overflow: auto;
   }
@@ -315,12 +563,22 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0;
+    background-color: #fff;
   }
   .menu__item {
     margin: 20px 0px 20px 0px;
   }
   .menu__link {
     font-size: 30px;
+  }
+
+  .footer__container {
+    flex-direction: column;
+  }
+
+  .map {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -336,10 +594,25 @@ body {
   .form-block {
     padding: 0px 0px 0px 50px;
   }
+
+  .why-we-block,
+  .step-block {
+    grid-template-columns: 50% 50%;
+  }
+
+  .classic-kitchen__container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 0;
+    padding: 15px 15px 15px 0px;
+  }
+
+  .classic-block {
+    margin: 2px;
+  }
 }
 
 /*PC*/
-
 @media (max-width: 1920px) {
   [class*="__container"] {
     max-width: 1890px;
@@ -347,7 +620,6 @@ body {
 }
 
 /*TABLET*/
-
 @media (max-width: 991.98px) {
   [class*="__container"] {
     max-width: 960px;
@@ -356,8 +628,8 @@ body {
     width: 85%;
   }
 }
-/*MOBILE*/
 
+/*MOBILE*/
 @media (max-width: 767.98px) {
   [class*="__container"] {
     max-width: none;
@@ -382,32 +654,81 @@ body {
     flex: 0 0 170px;
     padding-right: 20px;
   }
+  
   .look-kitch__container {
     flex-direction: column;
   }
   .text-container {
-    padding: 0px 0px 0px 30px;
+    padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
-    align-items: start;
-    
   }
+
   .look-kitch-text {
     width: 90%;
     margin: 0px;
-    
+    font-size: 36px;
+    text-align: center;
   }
 
+  .form-block {
+    padding: 0;
+  }
+
+  .look-kitch__form {
+    justify-content: center;
+  }
+
+  .form-send-form input {
+    width: auto;
+  }
+
+  .form-send-form button {
+    width: auto;
+  }
+
+  .title-text {
+    padding: 10px 0px 10px 0px;
+    line-height: 1;
+  }
+
+  .simple-text {
+    padding: 10px 0px 10px 0px;
+    width: auto;
+  }
+
+  .why-we-block,
+  .step-block {
+    grid-template-columns: 100%;
+  }
+
+  .classic-kitchen__container {
+    grid-template-columns: auto;
+  }
+
+  .classic-block button {
+    visibility: hidden;
+  }
+
+  .map iframe{
+    width: 90vw;
+  }
+}
+
+/*Small phone*/
+@media (max-width: 321.98px) {
+  .look-kitch-text {
+    font-size: 30px;
+    line-height: 2;
+  }
+
+  .title-text {
+    line-height: 1;
+  }
 }
 
 /*Удаление ГК лого*/
 @media (min-width: 768px) {
   .logo__text {
     display: none;
-  }
-}
-/*Small phone*/
-@media (max-width: 321.98px) {
-  .look-kitch-text {
-    font-size: 30px;
   }
 }
