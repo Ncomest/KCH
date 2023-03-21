@@ -657,6 +657,9 @@ body {
   .form-send-form button {
     width: 85%;
   }
+  .header__button {
+    width: 100%;
+  }
 }
 
 /*MOBILE*/
@@ -668,13 +671,11 @@ body {
   .header {
     height: 80px;
     margin: -20px 0px 0px 0px;
-
   }
 
   /*уменьшение кнопки в хедере*/
   .button {
     padding: 10px 20px;
-    width: 100%;
   }
   .header__logo > img {
     display: none;
