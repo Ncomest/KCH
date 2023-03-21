@@ -69,9 +69,10 @@ body {
 }
 
 .header__button {
-  flex: 0 0 240px;
+  flex: 1 1 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 20px;
 }
 
 .menu {
@@ -657,9 +658,6 @@ body {
   .form-send-form button {
     width: 85%;
   }
-  .header__button {
-    width: 100%;
-  }
 }
 
 /*MOBILE*/
@@ -685,12 +683,6 @@ body {
     display: block;
     position: relative;
     z-index: 5;
-  }
-  .header__button {
-    position: relative;
-    z-index: 5;
-    flex: 0 0 170px;
-    padding-right: 20px;
   }
   
   .menu__body._active {
