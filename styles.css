@@ -323,7 +323,7 @@ body {
 .step-block {
   display: grid;
   justify-content: center;
-  grid-template-columns: 25% 25% 25%;
+  grid-template-columns: repeat(3, 25%);
 }
 
 .block {
@@ -493,7 +493,37 @@ body {
   display: none;
 }
 
-@media (max-width: 991px) {
+/*landscape*/
+@media only screen and (max-width: 896px) and (orientation: landscape) and (max-height: 414px) {
+  
+  .header__logo img {
+    display: none;
+  }
+  
+  .header__logo div {
+    display: block;
+  }
+
+  .header {
+    height: 90px;
+    margin: -24px 0px 0px 0px;
+  }
+  
+  .look-kitch {
+    padding: 60px 0px 0px 0px;
+  }
+
+  .look-kitch__container {
+    height: 110vh;
+    padding: 90px 0px 50px 0px;
+  }
+  
+  .section-text {
+    padding: 100px 0px 0px 0px;
+  }
+}
+
+@media (max-width: 991.98px) {
   /*Делаем 3 полоски*/
   .menu__icon {
     z-index: 5;
@@ -592,12 +622,12 @@ body {
     justify-content: center;
   }
   .form-block {
-    padding: 0px 0px 0px 50px;
+    padding: 0px 30px 0px 30px;
   }
 
   .why-we-block,
   .step-block {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(2, 50%);
   }
 
   .classic-kitchen__container {
@@ -635,6 +665,12 @@ body {
     max-width: none;
   }
 
+  .header {
+    height: 80px;
+    margin: -20px 0px 0px 0px;
+
+  }
+
   /*уменьшение кнопки в хедере*/
   .button {
     padding: 10px 20px;
@@ -655,12 +691,28 @@ body {
     padding-right: 20px;
   }
   
+  .menu__body._active {
+    padding: 46px 0px 0px 0px;
+  }
+
+  .look-kitch {
+    padding: 60px 0px 0px 0px;
+  }
+
   .look-kitch__container {
     flex-direction: column;
+    box-sizing: border-box;
+    height: 110vh;
   }
+  .look-kitch__content {
+    justify-content: center;
+    flex: 0 1 30%;
+  }
+
   .text-container {
-    padding: 0px 0px 0px 0px;
+    padding: 00px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
+    
   }
 
   .look-kitch-text {
@@ -684,6 +736,10 @@ body {
 
   .form-send-form button {
     width: auto;
+  }
+
+  .section-text {
+    padding: 150px 0px 0px 0px;
   }
 
   .title-text {
@@ -714,6 +770,7 @@ body {
   }
 }
 
+
 /*Small phone*/
 @media (max-width: 321.98px) {
   .look-kitch-text {
@@ -732,3 +789,5 @@ body {
     display: none;
   }
 }
+
+
