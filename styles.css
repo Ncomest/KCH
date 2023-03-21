@@ -674,6 +674,7 @@ body {
   /*уменьшение кнопки в хедере*/
   .button {
     padding: 10px 20px;
+    width: 100%;
   }
   .header__logo > img {
     display: none;
