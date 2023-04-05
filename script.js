@@ -38,3 +38,23 @@ window.onclick = function(event) {
     document.body.style.overflow = "auto";
   }
 }
+
+/*для отправки формы*/
+
+const form = document.querySelector('form');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // остановить отправку формы по умолчанию
+  const formData = new FormData(form); // получить данные формы
+  const xhr = new XMLHttpRequest(); // создать объект XMLHttpRequest
+  xhr.open('POST', 'send-form.php'); // настроить запрос
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      alert('Данные успешно отправлены!');
+      form.reset(); // очистить данные формы
+    } else {
+      alert('Ошибка отправки данных!');
+    }
+  };
+  xhr.send(formData); // отправить данные формы на сервер
+});
